@@ -4,6 +4,7 @@ const FILES_TO_CACHE = [
     '/',
     '/index.js',
   '/styles.css',
+  `/db.js`
 ]
 const PRECACHE = 'precache-v1';
 const RUNTIME = 'runtime';
