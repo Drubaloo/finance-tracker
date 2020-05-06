@@ -4,7 +4,8 @@ const FILES_TO_CACHE = [
     '/',
     '/index.js',
   '/styles.css',
-  `/db.js`
+  `/db.js`, 
+  
 ]
 const PRECACHE = 'precache-v1';
 const RUNTIME = 'runtime';
@@ -27,7 +28,7 @@ self.addEventListener("fetch", function(event) {
   // cache all get requests to /api routes
   if (event.request.url.includes("/api/")) {
     event.respondWith(
-      caches.open(PRECACHE).then(cache => {
+      caches.open(RUNTIME).then(cache => {
         return fetch(event.request)
           .then(response => {
             // If the response was good, clone it and store it in the cache.
