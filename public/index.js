@@ -22,6 +22,7 @@ let myChart;
 
 fetch("/api/transaction")
   .then(response => {
+    console.log
     return response.json();
   })
   .then(data => {
