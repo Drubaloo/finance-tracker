@@ -26,7 +26,7 @@ self.addEventListener("fetch", function(event) {
   // cache all get requests to /api routes
   if (event.request.url.includes("/api/")) {
     event.respondWith(
-      caches.open(DATA_CACHE_NAME).then(cache => {
+      caches.open(PRECACHE).then(cache => {
         return fetch(event.request)
           .then(response => {
             // If the response was good, clone it and store it in the cache.
