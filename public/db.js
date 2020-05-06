@@ -12,6 +12,7 @@ request.onsuccess = (event) => {
 
     // check if app is online before reading from db
     if (navigator.onLine) {
+        console.log("hello")
         checkDatabase();
     }
 };
@@ -28,6 +29,7 @@ function saveRecord(record) {
 }
 
 function checkDatabase() {
+    console.log("checkdatabase")
     const transaction = db.transaction(["pending"], "readwrite");
     const store = transaction.objectStore("pending");
     const getAll = store.getAll();
@@ -49,6 +51,7 @@ function checkDatabase() {
                     
                     const transaction = db.transaction(["pending"], "readwrite");
                     const store = transaction.objectStore("pending");
+                    
                     store.clear();
                 });
         }
